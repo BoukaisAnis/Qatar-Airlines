@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qatar Airlines</title>
+    <link rel="stylesheet" href="../style/index.css" />
+    <link rel="icon" href="/assets/images/logo.png" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <!-- Logo -->
+        <div class="navbar-logo">
+          <img
+            src="https://i.pinimg.com/736x/2f/b4/67/2fb46785747092a36d36c9b7e522bee6.jpg"
+            alt="Qatar Airlines Logo"
+          />
+        </div>
+
+        <!-- Navigation Groups: left (main navigation + Help), right (actions) -->
+        <div class="nav-groups">
+          <ul class="nav-left">
+            <li class="nav-item">
+              <a href="#explore" class="nav-link current" aria-current="page"
+                >Explore</a
+              >
+            </li>
+            <li class="nav-item"><a href="#book" class="nav-link">Book</a></li>
+            <li class="nav-item">
+              <a href="#experience" class="nav-link">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a href="#privilege" class="nav-link">Privilege Club</a>
+            </li>
+          </ul>
+
+          <ul class="nav-right">
+            <li class="nav-item"><a href="#help" class="nav-link">Help</a></li>
+            <li class="nav-item nav-search">
+              <a href="#search" class="nav-link" aria-label="Search"
+                ><img
+                  src="../../assets/images/loupe.png"
+                  alt="Search"
+                  class="loupe-icon"
+              /></a>
+            </li>
+            <li class="nav-item">
+              <a href="#lang" class="nav-link nav-lang"
+                ><img
+                  src="../../assets/images/global.png"
+                  alt="Global"
+                  class="lang-icon"
+                />
+                EN</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#login" class="nav-link">Log in</a>
+            </li>
+            <li class="nav-item divider">|</li>
+            <li class="nav-item">
+              <a href="#signup" class="nav-link nav-signup">Sign up</a>
+            </li>
+          </ul>
+
+          <!-- Hamburger Menu (for mobile) -->
+          <div
+            class="hamburger"
+            tabindex="0"
+            role="button"
+            aria-label="Toggle menu"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+</body>
+</html>

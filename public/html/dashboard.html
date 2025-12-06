@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Qatar Airways</title>
+    <link rel="stylesheet" href="/public/style/dashboard.css" />
+    <link rel="icon" href="assets/images/logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <img src="/assets/images/logo.png" alt="Qatar Airways Logo">
+            <div class="logo-text">
+              <span>Qatar</span>
+              <span>Airways</span>
+            </div>
+          </div>
+          
+          <div class="user-profile">
+            <div class="user-avatar" id="userAvatar">
+              <img src="https://ui-avatars.com/api/?name=User&background=5c0029&color=fff&bold=true" 
+                   alt="User Avatar" id="avatarImage">
+            </div>
+            <div class="user-info">
+              <h4 id="userName">Loading...</h4>
+              <p id="userTier">Loading...</p>
+            </div>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul>
+            <li class="active">
+              <a href="#">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-ticket-alt"></i>
+                <span>My Bookings</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-plane"></i>
+                <span>Upcoming Flights</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-coins"></i>
+                <span>Avios Balance</span>
+                <span class="badge" id="sidebarAvios">0</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-crown"></i>
+                <span>Privilege Club</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-heart"></i>
+                <span>Saved Trips</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-user-circle"></i>
+                <span>Profile Settings</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-headset"></i>
+                <span>Support</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <a href="#" class="logout-btn" id="logoutBtn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Log Out</span>
+          </a>
+          <div class="sidebar-stats">
+            <div class="stat-item">
+              <span>Tier Points</span>
+              <strong id="tierPoints">850</strong>
+            </div>
+            <div class="stat-item">
+              <span>Status</span>
+              <strong id="userStatus" class="status-platinum">Platinum</strong>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Top Header -->
+        <header class="top-header">
+          <div class="header-left">
+            <h1 id="welcomeMessage">Welcome Back!</h1>
+            <p id="userStats">Here's your travel summary</p>
+          </div>
+          <div class="header-right">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="Search bookings, flights...">
+            </div>
+            <div class="header-actions">
+              <button class="btn-notification">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">3</span>
+              </button>
+              <button class="btn-new-booking">
+                <i class="fas fa-plus"></i>
+                New Booking
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-plane-departure"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Upcoming Flights</h3>
+              <p class="stat-number" id="upcomingFlights">0</p>
+              <p class="stat-desc" id="nextFlight">Next: Loading...</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-coins"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Avios Balance</h3>
+              <p class="stat-number" id="aviosBalance">0</p>
+              <p class="stat-desc" id="aviosDesc">+0 this month</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Travel Days</h3>
+              <p class="stat-number" id="travelDays">0</p>
+              <p class="stat-desc">This year</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-globe-asia"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Countries Visited</h3>
+              <p class="stat-number" id="countriesVisited">0</p>
+              <p class="stat-desc">With Qatar Airways</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Flights Section -->
+        <section class="section">
+          <div class="section-header">
+            <h2>Upcoming Flights</h2>
+            <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="flights-container" id="flightsContainer">
+            <!-- Flights will be loaded dynamically -->
+          </div>
+        </section>
+
+        <!-- Recent Bookings & Avios Activity -->
+        <div class="content-grid">
+          <section class="section">
+            <div class="section-header">
+              <h2>Recent Bookings</h2>
+              <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="bookings-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Booking ID</th>
+                    <th>Route</th>
+                    <th>Date</th>
+                    <th>Passengers</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="bookingsTableBody">
+                  <!-- Bookings will be loaded dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <h2>Avios Activity</h2>
+              <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="avios-activity" id="aviosActivity">
+              <!-- Activity will be loaded dynamically -->
+            </div>
+            <div class="avios-summary" id="aviosSummary">
+              <!-- Summary will be loaded dynamically -->
+            </div>
+          </section>
+        </div>
+
+        <!-- Quick Actions & Offers -->
+        <div class="content-grid">
+          <section class="section">
+            <div class="section-header">
+              <h2>Quick Actions</h2>
+            </div>
+            <div class="quick-actions">
+              <button class="action-btn">
+                <i class="fas fa-plane"></i>
+                <span>Book Flight</span>
+              </button>
+              <button class="action-btn">
+                <i class="fas fa-hotel"></i>
+                <span>Book Hotel</span>
+              </button>
+              <button class="action-btn">
+                <i class="fas fa-car"></i>
+                <span>Rent Car</span>
+              </button>
+              <button class="action-btn">
+                <i class="fas fa-gift"></i>
+                <span>Redeem Avios</span>
+              </button>
+              <button class="action-btn">
+                <i class="fas fa-passport"></i>
+                <span>Manage Passport</span>
+              </button>
+              <button class="action-btn">
+                <i class="fas fa-bell"></i>
+                <span>Flight Alerts</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-header">
+              <h2>Special Offers</h2>
+            </div>
+            <div class="offer-card">
+              <div class="offer-header">
+                <h3>Double Avios Offer</h3>
+                <span class="offer-badge">Limited Time</span>
+              </div>
+              <p>Earn double Avios on all Qatar Airways flights booked before Dec 31, 2024.</p>
+              <div class="offer-actions">
+                <button class="btn-primary">Learn More</button>
+                <span class="offer-expiry">Expires in 15 days</span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="/public/script/dashboard.js"></script>
+    <script src="/public/script/user-profile.js"></script>
+  </body>
+</html>

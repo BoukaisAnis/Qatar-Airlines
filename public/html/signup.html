@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Qatar Airways</title>
+    <link rel="stylesheet" href="/public/style/auth.css">
+    <link rel="icon" href="/assets/images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-left">
+            <div class="auth-logo">
+          <img src="/assets/images/logo.png" alt="Qatar Airlines Logo" />
+                <h1>Qatar Airways</h1>
+                <p>Join Privilege Club</p>
+            </div>
+            <div class="auth-image signup">
+                <div class="image-overlay">
+                    <h2>Join Privilege Club</h2>
+                    <p>Earn Avios on every flight and enjoy exclusive benefits.</p>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check-circle"></i> Earn 2,000 bonus Avios on signup</li>
+                        <li><i class="fas fa-check-circle"></i> Access to premium lounges</li>
+                        <li><i class="fas fa-check-circle"></i> Priority check-in and boarding</li>
+                        <li><i class="fas fa-check-circle"></i> Extra baggage allowance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="auth-right">
+            <div class="auth-form-container">
+                <div class="auth-header">
+                    <h2>Create your account</h2>
+                    <p>Join Qatar Airways Privilege Club today</p>
+                </div>
+                
+                <form id="signupForm" class="auth-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-feedback" id="emailFeedback"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <div class="input-group">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Create Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength" id="passwordStrength">
+                            <div class="strength-bar">
+                                <div class="strength-fill" id="strengthFill"></div>
+                            </div>
+                            <span class="strength-text" id="strengthText">Password strength</span>
+                        </div>
+                        <ul class="password-requirements">
+                            <li id="reqLength"><i class="fas fa-circle"></i> At least 8 characters</li>
+                            <li id="reqUppercase"><i class="fas fa-circle"></i> One uppercase letter</li>
+                            <li id="reqLowercase"><i class="fas fa-circle"></i> One lowercase letter</li>
+                            <li id="reqNumber"><i class="fas fa-circle"></i> One number</li>
+                            <li id="reqSpecial"><i class="fas fa-circle"></i> One special character</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                            <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="form-feedback" id="confirmFeedback"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <div class="input-group">
+                            <i class="fas fa-globe"></i>
+                            <select id="country" name="country" required>
+                                <option value="">Select your country</option>
+                                <option value="QA">Qatar</option>
+                                <option value="US">United States</option>
+                                <option value="GB">United Kingdom</option>
+                                <option value="IN">India</option>
+                                <option value="AE">United Arab Emirates</option>
+                                <option value="SA">Saudi Arabia</option>
+                                <option value="FR">France</option>
+                                <option value="DE">Germany</option>
+                                <option value="JP">Japan</option>
+                                <option value="AU">Australia</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">
+                                I agree to the <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Policy</a>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">
+                                Send me exclusive offers and travel updates
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit" id="signupBtn">
+                        <span>Create Account</span>
+                        <i class="fas fa-spinner fa-spin loading-icon"></i>
+                    </button>
+                </form>
+                
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.html" class="auth-link">Sign in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification"></div>
+    
+    <script src="/public/script/auth.js"></script>
+</body>
+</html>
